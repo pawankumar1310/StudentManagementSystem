@@ -11,6 +11,7 @@ namespace StudentManagementSystem.Controllers
         public StudentController(StudentDbDemoContext context)
         {
             _context = context;
+            Console.WriteLine("abad" + _context);
         }
         // GET: api/<StudentController>
         [HttpGet("GetAllStudent")]
