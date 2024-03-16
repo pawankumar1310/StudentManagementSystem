@@ -46,6 +46,6 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 
 11. Run application : dotnet run
 12. Paste url : http://localhost:5008/swagger
-
+14. Create controllers to create api.
 
 13. Creating a new blazor application : dotnet new blazorwasm -n YourAppName
