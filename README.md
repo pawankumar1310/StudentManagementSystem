@@ -3,7 +3,7 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 
 
 
-#### 1. Prequisite:
+#### 1. Prerequisites:
 1. Create webapi => dotnet new webapi
 2. install C#
 3. install Nuget Package Manager
@@ -13,7 +13,8 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 	ctrl + shift + p -> Choose Nuget add package -> Microsoft.EntityFrameworkCore.SqlServer
  
 6. Execute the below command for verify the EF installation => dotnet ef
-7. Enter scaffold command 
+7. Open sql server create database (StudentDbDemo) and go to Tasks -> Import Flat file (.csv) and run below command in vs code terminal.
+8. Enter scaffold command 
 
 	dotnet ef dbcontext scaffold "Server = DESKTOP-RUJ2TUO;
 				      Database=TestDemo;
@@ -27,7 +28,7 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 	dotnet ef dbcontext scaffold "Server=DESKTOP-G0N0BUD\\SQLEXPRESS;Database=StudentDbDemo;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f
 
 
-8. appsettings.json
+9. appsettings.json
 
  "ConnectionStrings": {
     "ConnectionStrings" : "Server = DESKTOP-RUJ2TUO;
@@ -36,15 +37,15 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 			   TrustServerCertificate=True;"
   }
 
-9. Program.cs 
+10. Program.cs 
 
  builder.Services.AddDbContext<TestDemoContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionStrings"));
 });
 
-10. Run application : dotnet run
-11. Paste url : http://localhost:5008/swagger
+11. Run application : dotnet run
+12. Paste url : http://localhost:5008/swagger
 
 
-12. Creating a new blazor application : dotnet new blazorwasm -n YourAppName
+13. Creating a new blazor application : dotnet new blazorwasm -n YourAppName
