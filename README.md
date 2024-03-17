@@ -53,4 +53,4 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 
 
 #### Branch Descriptions :
-1. First main branch is responsible for only  creating an new web API using Entity Framework Core and SQL Server database with CRUD operations.
+1. First main branch is responsible for only  creating an new web API using Entity Framework Core(Database First Approach) and SQL Server database with CRUD operations.
