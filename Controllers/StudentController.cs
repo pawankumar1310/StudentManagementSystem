@@ -98,7 +98,7 @@ namespace StudentManagementSystem.Controllers
                 return BadRequest("Failed to update the student details");
             }
         }
-
+        //Update student data by student Id
         [HttpPut("{id}/UpdateStudentByID", Name = "UpdateStudentByID")]
         public async Task<IActionResult> UpdateStudentDataByID(string id,[FromBody] Student updatedStudent)
         {
@@ -142,6 +142,29 @@ namespace StudentManagementSystem.Controllers
             {
                 _logger.LogError(ex, "Failed to update student details");
                 return BadRequest("Failed to update the student details");
+            }
+        }
+        // Delete Student data by Id
+        [HttpDelete("{id}/deleteStudent", Name = "DeleteStudent")]
+        public async Task<IActionResult> DeleteStudentById(string id)
+        {
+            try
+            {
+                var findStudent = await _context.Students.FindAsync(id);
+                if(findStudent != null)
+                {
+                    _context.Remove(findStudent);
+                    await _context.SaveChangesAsync();
+                    return Ok("Deleted student successfully!");
+                }
+                else{
+                    return BadRequest("No such student exists.");
+                }
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Failed to delete  student with id: {0}", id);
+                return BadRequest("Failed to delete the student");
             }
         }
     }
