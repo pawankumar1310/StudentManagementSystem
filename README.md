@@ -49,3 +49,8 @@ This is the first dotnet project in which we are going to use .Net MVC, ADO.NET,
 14. Create controllers to create api.
 
 13. Creating a new blazor application : dotnet new blazorwasm -n YourAppName
+
+
+
+#### Branch Descriptions :
+1. First main branch is responsible for only  creating an new web API using Entity Framework Core and SQL Server database with CRUD operations.
