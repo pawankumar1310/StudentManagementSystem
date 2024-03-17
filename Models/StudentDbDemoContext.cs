@@ -25,10 +25,13 @@ public partial class StudentDbDemoContext : DbContext
     {
         modelBuilder.Entity<Student>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Student");
+            entity.HasKey(e => e.StudentId).HasName("PK_StudentID");
 
+            entity.ToTable("Student");
+
+            entity.Property(e => e.StudentId)
+                .HasMaxLength(50)
+                .HasColumnName("Student_ID");
             entity.Property(e => e.Class).HasMaxLength(50);
             entity.Property(e => e.Gender)
                 .HasMaxLength(50)
@@ -51,9 +54,6 @@ public partial class StudentDbDemoContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("StageID");
             entity.Property(e => e.StudentAbsenceDays).HasMaxLength(50);
-            entity.Property(e => e.StudentId)
-                .HasMaxLength(50)
-                .HasColumnName("Student_ID");
             entity.Property(e => e.StudentMarks).HasColumnName("Student_Marks");
             entity.Property(e => e.Topic).HasMaxLength(50);
             entity.Property(e => e.VisItedResources).HasColumnName("VisITedResources");
