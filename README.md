@@ -158,6 +158,12 @@ Attachments :
 
 
 #### Branch Descriptions :
-1. First main branch is responsible for only  creating an new web API using Entity Framework Core(Database First Approach) and SQL Server database with CRUD operations.
+1. First main branch is responsible for only  creating an new web API using Entity Framework Core(Database First Approach) and SQL Server database with CRUD operations.In this, i have imported (csv file) and made only Student_Id as primary key.
 
 2. Second DbFirstApproach branch : In it i have  created the database first approach using Entity Framework Core' the database name is 'StudentDB' which has validation. Based on this validation. I have created validation on model class.
+- Run the following command :
+ 
+ ` dotnet ef dbcontext scaffold "Server=DESKTOP-G0N0BUD\\SQLEXPRESS;Database=StudentDB;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f ` 
+ 
+
+
